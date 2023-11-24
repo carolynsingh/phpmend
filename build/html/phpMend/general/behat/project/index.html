@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RUNNING BEHAT &mdash; php  documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="LARAVEL" href="../../../laravel/index.html" />
+    <link rel="prev" title="FEATURES AND SCENARIO" href="../featuresAndScenario/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            php
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html"> PHP Mend</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">General</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../debugger/index.html">PHPUnit Debugging in Docker</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Behat</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../featuresAndScenario/index.html">Features and Scenario</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Running Behat</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../laravel/index.html">Laravel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../php/index.html">Php</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../libraries/index.html">Libraries</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">php</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">PHP Mend</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">GENERAL</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">BEHAT</a></li>
+      <li class="breadcrumb-item active">RUNNING BEHAT</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/phpMend/general/behat/project/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="running-behat">
+<h1>RUNNING BEHAT<a class="headerlink" href="#running-behat" title="Link to this heading"></a></h1>
+<section id="setting-up-behat">
+<h2>SETTING UP BEHAT<a class="headerlink" href="#setting-up-behat" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>After you have installed PHP and Composer, you may create a new Laravel project in terminal via the Composer create-project command :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>composer<span class="w"> </span>create-project<span class="w"> </span>laravel/laravel<span class="o">{</span>project_name<span class="o">}</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/img.png" src="../../../../_images/img.png" />
+<ol class="arabic simple" start="2">
+<li><p>Download behat in the project</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>composer<span class="w"> </span>require<span class="w"> </span>behat/behat<span class="w"> </span><span class="m">3</span>.*
+</pre></div>
+</div>
+<img alt="../../../../_images/img_1.png" src="../../../../_images/img_1.png" />
+<ol class="arabic simple" start="3">
+<li><p>Download guzzle</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>composer<span class="w"> </span>require<span class="w"> </span>guzzlehttp/guzzle
+</pre></div>
+</div>
+<img alt="../../../../_images/img_2.png" src="../../../../_images/img_2.png" />
+<p>4.To check the version of behat</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vendor/bin/behat<span class="w"> </span>-V
+</pre></div>
+</div>
+<img alt="../../../../_images/img_3.png" src="../../../../_images/img_3.png" />
+</section>
+<section id="initialise-and-execute-project">
+<h2>INITIALISE AND EXECUTE PROJECT<a class="headerlink" href="#initialise-and-execute-project" title="Link to this heading"></a></h2>
+<ol class="arabic simple" start="5">
+<li><p>To initialise the project</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vendor/bin/behat<span class="w"> </span>--init
+</pre></div>
+</div>
+<img alt="../../../../_images/img_4.png" src="../../../../_images/img_4.png" />
+<ol class="arabic simple" start="6">
+<li><p>To execute the project</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vendor/bin/behat
+</pre></div>
+</div>
+<img alt="../../../../_images/img_5.png" src="../../../../_images/img_5.png" />
+<ol class="arabic simple" start="7">
+<li><p>Create new file in features</p></li>
+</ol>
+<img alt="../../../../_images/img_6.png" src="../../../../_images/img_6.png" />
+<ol class="arabic simple" start="8">
+<li><p>Write the scenario in the file created</p></li>
+</ol>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">Feature: List of announcements</span>
+<span class="x"> Scenario: I want a list of announcements</span>
+<span class="x">     Given I am an unauthenticated user</span>
+<span class="x">     When I request a list of announcements from &quot;http://localhost:8080&quot;</span>
+<span class="x">     Then The results would include an announcement with ID &quot;7467474&quot;</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/img_7.png" src="../../../../_images/img_7.png" />
+<ol class="arabic simple" start="9">
+<li><p>Run the project</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vendor/bin/behat
+</pre></div>
+</div>
+<img alt="../../../../_images/img_8.png" src="../../../../_images/img_8.png" />
+<ol class="arabic simple" start="10">
+<li><p>Create context and copy and paste these methods in feature context file</p></li>
+</ol>
+<img alt="../../../../_images/img_9.png" src="../../../../_images/img_9.png" />
+<ol class="arabic simple" start="11">
+<li><p>Check in announcements-list.feature, feature exists and it turns to blue colour</p></li>
+</ol>
+<img alt="../../../../_images/img_10.png" src="../../../../_images/img_10.png" />
+<p>12.Execute the project , it should show error because of pending exception</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vendor/bin/behat
+</pre></div>
+</div>
+<img alt="../../../../_images/img_11.png" src="../../../../_images/img_11.png" />
+<ol class="arabic simple" start="13">
+<li><p>Import pending exception to remove fatal error</p></li>
+</ol>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">use Behat\Behat\Tester\Exception\PendingException;</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/img_12.png" src="../../../../_images/img_12.png" />
+<ol class="arabic simple" start="14">
+<li><p>Execute the project again, highlighted text will change its colour from red to yellow</p></li>
+</ol>
+<img alt="../../../../_images/img_13.png" src="../../../../_images/img_13.png" />
+<ol class="arabic simple" start="15">
+<li><p>Make a call to API</p></li>
+</ol>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$client = new GuzzleHttp\Client([&#39;base_uri&#39;=&gt;&#39;http://localhost:8080&#39;]);</span>
+
+<span class="x">     $response = $client-&gt;get (uri:&#39;/&#39;);</span>
+
+<span class="x">     $responseCode = $response-&gt;getStatusCode();</span>
+
+<span class="x">     if ($responseCode !=200) { throw new Exception (message:&quot;Not able to access!&quot;);</span>
+<span class="x">     }</span>
+
+<span class="x">     return true;</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/img_14.png" src="../../../../_images/img_14.png" />
+<ol class="arabic simple" start="16">
+<li><p>Execute the project again,”Given I am an unauthenticated user” will change its colour from yellow to green showing it is verified</p></li>
+</ol>
+<img alt="../../../../_images/img_15.png" src="../../../../_images/img_15.png" />
+<ol class="arabic simple" start="17">
+<li><p>Make a call to next command</p></li>
+</ol>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$client = new GuzzleHttp\Client([&#39;base_uri&#39;=&gt;$arg1]);</span>
+
+<span class="x">    $this-&gt;response = $client-&gt;get(uri: &#39;/announcements/&#39;);</span>
+
+<span class="x">    $responseCode = $this-&gt;response -&gt;getStatusCode();</span>
+
+<span class="x">    if ($responseCode!=200 ){throw new Exception (message: &quot;Expected a 200, but received&quot;.</span>
+<span class="x">    $responseCode);</span>
+<span class="x">    }</span>
+<span class="x">    return true ;</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/img_16.png" src="../../../../_images/img_16.png" />
+<ol class="arabic simple" start="18">
+<li><p>Execute the project again,”When I request a list of announcements from” will change its colour from yellow to green showing it is verified.</p></li>
+</ol>
+<img alt="../../../../_images/img_18.png" src="../../../../_images/img_18.png" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../featuresAndScenario/index.html" class="btn btn-neutral float-left" title="FEATURES AND SCENARIO" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../../laravel/index.html" class="btn btn-neutral float-right" title="LARAVEL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, pactreon.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HORIZON &mdash; php  documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Job Classes and Daemons" href="../jobClass/index.html" />
+    <link rel="prev" title="PREDIS" href="../redis/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            php
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html"> PHP Mend</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../general/index.html">General</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Laravel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../core/index.html">Core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jobs/index.html">Jobs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../middleware/index.html">Middleware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../responses/index.html">Responses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../requestclasses/index.html">Request Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../authentication/index.html">Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eloquent/index.html">Eloquent</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Laravel Queues</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../jobs/index.html">JOBS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../redis/index.html">REDIS</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">HORIZON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../jobClass/index.html">JOB CLASSES AND DAEMONS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../failedJobs/index.html">FAILED JOBS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cronjobs/index.html">CRON JOBS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../php/index.html">Php</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../libraries/index.html">Libraries</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">php</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">PHP Mend</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">LARAVEL</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">LARAVEL QUEUES</a></li>
+      <li class="breadcrumb-item active">HORIZON</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/phpMend/laravel/laravelqueues/horizon/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="horizon">
+<h1>HORIZON<a class="headerlink" href="#horizon" title="Link to this heading"></a></h1>
+<section id="prerequisites">
+<h2>PREREQUISITES<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://phoenixnap.com/kb/docker-redis">https://phoenixnap.com/kb/docker-redis</a></p>
+<p><a class="reference external" href="https://laravel.com/docs/8.x/queues">https://laravel.com/docs/8.x/queues</a></p>
+</section>
+<section id="introduction-and-features">
+<h2>INTRODUCTION AND FEATURES<a class="headerlink" href="#introduction-and-features" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">Horizon provides a beautiful dashboard and code-driven configuration for your Laravel powered Redis queues.</div>
+<div class="line">Horizon allows you to easily monitor key metrics of your queue system such as job throughput, runtime, and job failures.</div>
+</div>
+<div class="line-block">
+<div class="line">All of your worker configuration is stored in a single, simple configuration file, allowing your configuration to stay</div>
+<div class="line">in source control where your entire team can collaborate.</div>
+</div>
+<p>Src: <a class="reference external" href="https://laravel.com/docs/8.x/horizon">https://laravel.com/docs/8.x/horizon</a></p>
+</section>
+<section id="concepts">
+<h2>CONCEPTS<a class="headerlink" href="#concepts" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Laravel Queues</p></li>
+<li><p>Redis queue driver</p></li>
+<li><p>Horizon Dashboard</p></li>
+</ol>
+<p>Queue Docs : <a class="reference external" href="https://laravel.com/docs/8.x/queues">https://laravel.com/docs/8.x/queues</a></p>
+</section>
+<section id="working-of-horizon">
+<h2>WORKING OF HORIZON<a class="headerlink" href="#working-of-horizon" title="Link to this heading"></a></h2>
+<img alt="../../../../_images/workflows1.png" src="../../../../_images/workflows1.png" />
+</section>
+<section id="installation-getting-started">
+<h2>INSTALLATION &amp; GETTING STARTED<a class="headerlink" href="#installation-getting-started" title="Link to this heading"></a></h2>
+<p>You should ensure that your queue connection is set to redis in your queue configuration file.
+You may use Composer to install Horizon into your Laravel project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>composer<span class="w"> </span>require<span class="w"> </span>laravel/horizon
+</pre></div>
+</div>
+<p>After installing Horizon, publish its assets using the horizon install Artisan command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>artisan<span class="w"> </span>horizon:install
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Once you have configured your workers in the config/horizon.php configuration file,</div>
+<div class="line">you may start Horizon using the horizon Artisan command.</div>
+<div class="line">This single command will start all of your configured workers:</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>artisan<span class="w"> </span>horizon
+</pre></div>
+</div>
+<p>You may check the current status of the Horizon process using the horizon:status Artisan command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>artisan<span class="w"> </span>horizon:status
+</pre></div>
+</div>
+</section>
+<section id="list-of-functionalities-provided">
+<h2>LIST OF FUNCTIONALITIES PROVIDED<a class="headerlink" href="#list-of-functionalities-provided" title="Link to this heading"></a></h2>
+<p><strong>Tags</strong>
+| Horizon allows you to assign “tags” to jobs, including mailables, event broadcasts, notifications, and queued event listeners.
+| In fact, Horizon will intelligently and automatically tag most jobs depending on the Eloquent models that are attached to the job.</p>
+<p><strong>Notifications</strong></p>
+<div class="line-block">
+<div class="line">If you would like to be notified when one of your queues has a long wait time,</div>
+<div class="line">you may use the Horizon::routeMailNotificationsTo, Horizon::routeSlackNotificationsTo,</div>
+<div class="line">and Horizon::routeSmsNotificationsTo methods. You may call these methods from your application’s HorizonServiceProvider.</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Horizon::routeMailNotificationsTo<span class="o">(</span><span class="s1">&#39;example@example.com&#39;</span><span class="o">)</span><span class="p">;</span>
+Horizon::routeSlackNotificationsTo<span class="o">(</span><span class="s1">&#39;slack-webhook-url&#39;</span>,<span class="w"> </span><span class="s1">&#39;#channel&#39;</span><span class="o">)</span><span class="p">;</span>
+Horizon::routeSmsNotificationsTo<span class="o">(</span><span class="s1">&#39;15556667777&#39;</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>Metrics</strong>
+Horizon includes a metrics dashboard which provides information on your job and queue wait times and throughput.
+In order to populate this dashboard, you should configure Horizon’s snapshot Artisan command to run
+every five minutes via your application’s scheduler.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">protected function schedule(Schedule $schedule){</span>
+<span class="x">    $schedule-&gt;command(&#39;horizon:snapshot&#39;)-&gt;everyFiveMinutes();</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+</section>
+<section id="configuration">
+<h2>CONFIGURATION<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">After publishing Horizon’s assets, its primary configuration file will be located at <a href="#id1"><span class="problematic" id="id2">:pink:`config/horizon.php.`</span></a></div>
+<div class="line">This configuration file allows you to configure your worker options and each configuration option includes a description</div>
+<div class="line">of its purpose, so be sure to thoroughly explore this file.</div>
+</div>
+<p><strong>Balance Options:</strong></p>
+<div class="line-block">
+<div class="line">Horizon allows you to choose from three balancing strategies: simple, auto, and false. The simple strategy,</div>
+<div class="line">which is the configuration file’s default, splits incoming jobs evenly between processes:</div>
+<div class="line">‘balance’ =&gt; ‘simple’</div>
+<div class="line">The auto strategy adjusts the number of worker processes per queue based on the current workload of the queue.</div>
+</div>
+<p><strong>Job Trimming:</strong>
+| The horizon configuration file allows you to configure how long recent and failed jobs should be persisted (in minutes).
+| By default, recent jobs are kept for one hour while failed jobs are kept for a week:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="s1">&#39;trim&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="o">[</span>
+<span class="w">    </span><span class="s1">&#39;recent&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="m">60</span>,
+<span class="w">    </span><span class="s1">&#39;failed&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="m">10080</span>,
+<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="hello-world-poc">
+<h2>HELLO WORLD/POC<a class="headerlink" href="#hello-world-poc" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Create a new laravel project</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>composer<span class="w"> </span>create-project<span class="w"> </span>--prefer-dist<span class="w"> </span>laravel/laravel<span class="w"> </span>horizonSample
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>horizonSample
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Configure Horizon</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>composer<span class="w"> </span>require<span class="w"> </span>laravel/horizon
+$<span class="w"> </span>php<span class="w"> </span>artisan<span class="w"> </span>horizon:install
+$<span class="w"> </span>php<span class="w"> </span>artisan<span class="w"> </span>queue:table
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Configure mysql Database .env file. (start mysql container)</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">DB_CONNECTION</span><span class="o">=</span>mysql
+<span class="nv">DB_HOST</span><span class="o">=</span><span class="m">127</span>.0.0.1
+<span class="nv">DB_PORT</span><span class="o">=</span><span class="m">3306</span>
+<span class="nv">DB_DATABASE</span><span class="o">=</span><span class="nb">test</span>
+<span class="nv">DB_USERNAME</span><span class="o">=</span>root
+<span class="nv">DB_PASSWORD</span><span class="o">=</span>Qwerty@321
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Configure Redis in .env file</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">QUEUE_CONNECTION</span><span class="o">=</span>redis
+<span class="nv">REDIS_CLIENT</span><span class="o">=</span>predis
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Install predis requirement.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>composer<span class="w"> </span>require<span class="w"> </span>predis/predis
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>start redis docker container</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>redisContainer<span class="w"> </span>-p<span class="w"> </span><span class="m">6379</span>:6379<span class="w"> </span>--restart<span class="w"> </span>always<span class="w"> </span>--detach<span class="w"> </span>redis
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Create a sample job class.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>php<span class="w"> </span>artisan<span class="w"> </span>make:job<span class="w"> </span>SampleJob
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Create a route to start the sample job</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Route::get<span class="o">(</span><span class="s1">&#39;/startJob&#39;</span>,<span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+
+<span class="w">    </span><span class="se">\A</span>pp<span class="se">\J</span>obs<span class="se">\S</span>ampleJob::dispatch<span class="o">()</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;job started&quot;</span><span class="p">;</span>
+<span class="o">})</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Start horizon service and php server</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>php<span class="w"> </span>artisan<span class="w"> </span>horizon
+$<span class="w"> </span>php<span class="w"> </span>artisan<span class="w"> </span>serve
+</pre></div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>Hit api call <a class="reference external" href="http://127.0.0.1:8000/startJob">http://127.0.0.1:8000/startJob</a> to dispatch the sample job.</p></li>
+<li><p>Open <a class="reference external" href="http://127.0.0.1:8000/horizon/dashboard">http://127.0.0.1:8000/horizon/dashboard</a> to view the horizon dashboard.</p></li>
+<li><p>View dashboard to see the status of the job processing.</p></li>
+</ol>
+<img alt="../../../../_images/horizon_dashboard.png" src="../../../../_images/horizon_dashboard.png" />
+<ol class="arabic simple" start="12">
+<li><p>Jobs can also be associated with queues. Below method can be used to assign queue to a job.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="se">\A</span>pp<span class="se">\J</span>obs<span class="se">\S</span>ampleJob::dispatch<span class="o">()</span>-&gt;onQueue<span class="o">(</span><span class="s1">&#39;sampleQueue&#39;</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="13">
+<li><p>Configure horizon.php to add queue details.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;defaults&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="o">[</span>
+<span class="w">        </span><span class="s1">&#39;supervisor-1&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="o">[</span>
+<span class="w">            </span><span class="s1">&#39;connection&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s1">&#39;redis&#39;</span>,
+<span class="w">            </span><span class="s1">&#39;queue&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="o">[</span><span class="s1">&#39;default&#39;</span>,<span class="s1">&#39;sampleQueue&#39;</span><span class="o">]</span>,
+<span class="w">            </span><span class="s1">&#39;balance&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s1">&#39;auto&#39;</span>,
+<span class="w">            </span><span class="s1">&#39;maxProcesses&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="m">1</span>,
+<span class="w">            </span><span class="s1">&#39;tries&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="m">1</span>,
+<span class="w">            </span><span class="s1">&#39;nice&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="m">0</span>,
+<span class="w">        </span><span class="o">]</span>,
+<span class="w">    </span><span class="o">]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="14">
+<li><p>Restart the server, after updating the configs</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>php<span class="w"> </span>artisan<span class="w"> </span>horizon
+$<span class="w"> </span>php<span class="w"> </span>artisan<span class="w"> </span>serve
+</pre></div>
+</div>
+<ol class="arabic simple" start="15">
+<li><p>Check horizon dashboard to check the queue details.</p></li>
+</ol>
+<img alt="../../../../_images/horizon_queue.png" src="../../../../_images/horizon_queue.png" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../redis/index.html" class="btn btn-neutral float-left" title="PREDIS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../jobClass/index.html" class="btn btn-neutral float-right" title="Job Classes and Daemons" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, pactreon.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

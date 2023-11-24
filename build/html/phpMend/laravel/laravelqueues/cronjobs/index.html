@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRON JOBS &mdash; php  documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="PHP" href="../../../php/index.html" />
+    <link rel="prev" title="FAILED JOBS" href="../failedJobs/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            php
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html"> PHP Mend</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../general/index.html">General</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Laravel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../core/index.html">Core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jobs/index.html">Jobs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../middleware/index.html">Middleware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../responses/index.html">Responses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../requestclasses/index.html">Request Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../authentication/index.html">Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eloquent/index.html">Eloquent</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Laravel Queues</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../jobs/index.html">JOBS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../redis/index.html">REDIS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../horizon/index.html">HORIZON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../jobClass/index.html">JOB CLASSES AND DAEMONS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../failedJobs/index.html">FAILED JOBS</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">CRON JOBS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../php/index.html">Php</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../libraries/index.html">Libraries</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">php</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">PHP Mend</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">LARAVEL</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">LARAVEL QUEUES</a></li>
+      <li class="breadcrumb-item active">CRON JOBS</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/phpMend/laravel/laravelqueues/cronjobs/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cron-jobs">
+<h1>CRON JOBS<a class="headerlink" href="#cron-jobs" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>INTRODUCTION<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>Cron job refers to a scheduled task that is executed automatically at specified intervals by the server’s cron scheduler. Cron jobs are used to automate repetitive tasks, such as running scheduled tasks, sending emails, generating reports, and performing maintenance activities.</p>
+</section>
+<section id="workflow-of-scheduling-jobs">
+<h2>WORKFLOW OF SCHEDULING JOBS<a class="headerlink" href="#workflow-of-scheduling-jobs" title="Link to this heading"></a></h2>
+<img alt="../../../../_images/img_24.png" src="../../../../_images/img_24.png" />
+</section>
+<section id="create-laravel-project">
+<h2>CREATE LARAVEL PROJECT<a class="headerlink" href="#create-laravel-project" title="Link to this heading"></a></h2>
+<p><strong>Step 1 :</strong></p>
+<p>Run the following command to create laravel project :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>composer<span class="w"> </span>create-project<span class="w"> </span>--prefer-dist<span class="w"> </span>laravel/laravel<span class="w"> </span>cronjobs
+</pre></div>
+</div>
+</section>
+<section id="create-new-command">
+<h2>CREATE NEW COMMAND<a class="headerlink" href="#create-new-command" title="Link to this heading"></a></h2>
+<p><strong>Step 2 :</strong></p>
+<p>Create custom command,it will execute with task scheduling cron job. Run below command to create a new custom command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>artisan<span class="w"> </span>make:command<span class="w"> </span>DemoCron<span class="w"> </span>--command<span class="o">=</span>demo:cron
+</pre></div>
+</div>
+<p><strong>Step 3 :</strong></p>
+<p>Add the following code in app/Console/Commands/DemoCron.php :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Console\Commands</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Illuminate\Console\Command</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Http</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">App\Models\User</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">DemoCron</span> <span class="k">extends</span> <span class="nx">Command</span>
+<span class="p">{</span>
+ <span class="sd">/**</span>
+<span class="sd">  * The name and signature of the console command.</span>
+<span class="sd">  *</span>
+<span class="sd">  * @var string</span>
+<span class="sd">  */</span>
+ <span class="k">protected</span> <span class="nv">$signature</span> <span class="o">=</span> <span class="s1">&#39;demo:cron&#39;</span><span class="p">;</span>
+
+ <span class="sd">/**</span>
+<span class="sd">  * The console command description.</span>
+<span class="sd">  *</span>
+<span class="sd">  * @var string</span>
+<span class="sd">  */</span>
+ <span class="k">protected</span> <span class="nv">$description</span> <span class="o">=</span> <span class="s1">&#39;Command description&#39;</span><span class="p">;</span>
+
+ <span class="sd">/**</span>
+<span class="sd">  * Create a new command instance.</span>
+<span class="sd">  *</span>
+<span class="sd">  * @return void</span>
+<span class="sd">  */</span>
+ <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span>
+ <span class="p">{</span>
+     <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
+ <span class="p">}</span>
+
+ <span class="sd">/**</span>
+<span class="sd">  * Execute the console command.</span>
+<span class="sd">  *</span>
+<span class="sd">  * @return int</span>
+<span class="sd">  */</span>
+ <span class="k">public</span> <span class="k">function</span> <span class="nf">handle</span><span class="p">()</span>
+ <span class="p">{</span>
+     <span class="nx">info</span><span class="p">(</span><span class="s2">&quot;Cron Job running at &quot;</span><span class="o">.</span> <span class="nx">now</span><span class="p">());</span>
+
+     <span class="cm">/*------------------------------------------</span>
+<span class="cm">     --------------------------------------------</span>
+<span class="cm">     Write Your Logic Here....</span>
+<span class="cm">     I am getting users and create new users if not exist....</span>
+<span class="cm">     --------------------------------------------</span>
+<span class="cm">     --------------------------------------------*/</span>
+     <span class="nv">$response</span> <span class="o">=</span> <span class="nx">Http</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;https://jsonplaceholder.typicode.com/users&#39;</span><span class="p">);</span>
+
+     <span class="nv">$users</span> <span class="o">=</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">();</span>
+
+     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$users</span><span class="p">))</span> <span class="p">{</span>
+         <span class="k">foreach</span> <span class="p">(</span><span class="nv">$users</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$user</span><span class="p">)</span> <span class="p">{</span>
+             <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">User</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="nv">$user</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">exists</span><span class="p">()</span> <span class="p">){</span>
+                 <span class="nx">User</span><span class="o">::</span><span class="na">create</span><span class="p">([</span>
+                     <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$user</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+                     <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="nv">$user</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">],</span>
+                     <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="nx">bcrypt</span><span class="p">(</span><span class="s1">&#39;123456789&#39;</span><span class="p">)</span>
+                 <span class="p">]);</span>
+             <span class="p">}</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+
+     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="register-as-task-scheduler">
+<h2>REGISTER AS TASK SCHEDULER<a class="headerlink" href="#register-as-task-scheduler" title="Link to this heading"></a></h2>
+<p><strong>Step 4 :</strong></p>
+<p>Add the following code in app/Console/Kernel.php :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Console</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Illuminate\Console\Scheduling\Schedule</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Foundation\Console\Kernel</span> <span class="k">as</span> <span class="nx">ConsoleKernel</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Kernel</span> <span class="k">extends</span> <span class="nx">ConsoleKernel</span>
+<span class="p">{</span>
+ <span class="sd">/**</span>
+<span class="sd">  * Define the application&#39;s command schedule.</span>
+<span class="sd">  *</span>
+<span class="sd">  * @param  \Illuminate\Console\Scheduling\Schedule  $schedule</span>
+<span class="sd">  * @return void</span>
+<span class="sd">  */</span>
+ <span class="k">protected</span> <span class="k">function</span> <span class="nf">schedule</span><span class="p">(</span><span class="nx">Schedule</span> <span class="nv">$schedule</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="nv">$schedule</span><span class="o">-&gt;</span><span class="na">command</span><span class="p">(</span><span class="s1">&#39;demo:cron&#39;</span><span class="p">)</span>
+              <span class="o">-&gt;</span><span class="na">everyMinute</span><span class="p">();</span>
+ <span class="p">}</span>
+
+ <span class="sd">/**</span>
+<span class="sd">  * Register the commands for the application.</span>
+<span class="sd">  *</span>
+<span class="sd">  * @return void</span>
+<span class="sd">  */</span>
+ <span class="k">protected</span> <span class="k">function</span> <span class="nf">commands</span><span class="p">()</span>
+ <span class="p">{</span>
+     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="no">__DIR__</span><span class="o">.</span><span class="s1">&#39;/Commands&#39;</span><span class="p">);</span>
+
+     <span class="k">require</span> <span class="nx">base_path</span><span class="p">(</span><span class="s1">&#39;routes/console.php&#39;</span><span class="p">);</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="run-scheduler-command-for-test">
+<h2>RUN SCHEDULER COMMAND FOR TEST<a class="headerlink" href="#run-scheduler-command-for-test" title="Link to this heading"></a></h2>
+<p><strong>Step 5 :</strong></p>
+<p>Run the job manually using the following command :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>artisan<span class="w"> </span>schedule:run
+</pre></div>
+</div>
+</section>
+<section id="workflow-of-cron-jobs">
+<h2>WORKFLOW OF CRON JOBS<a class="headerlink" href="#workflow-of-cron-jobs" title="Link to this heading"></a></h2>
+<img alt="../../../../_images/img_34.png" src="../../../../_images/img_34.png" />
+</section>
+<section id="cron-job-set-up-on-server">
+<h2>CRON JOB SET UP ON SERVER<a class="headerlink" href="#cron-job-set-up-on-server" title="Link to this heading"></a></h2>
+<p><strong>Step 6 :</strong></p>
+<p>To set up a cron job, add a new entry to your server’s cron tab file. Run the following command to open crontab file :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>crontab<span class="w"> </span>-e
+</pre></div>
+</div>
+<p><strong>Step 7 :</strong></p>
+<p>It will open the Crontab file, and you need to assimilate the following code in the same file.</p>
+<p>Don’t forget to replace /path/to/artisan with the full path to the custom Artisan command of the Laravel project.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/your-project-path<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>php<span class="w"> </span>artisan<span class="w"> </span>schedule:run<span class="w"> </span>&gt;&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/img_113.png" src="../../../../_images/img_113.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For Nano Editor:</p>
+<ul class="simple">
+<li><p>Press Ctrl + O to write changes.</p></li>
+<li><p>Press Enter to confirm the file name.</p></li>
+<li><p>Press Ctrl + X to exit.</p></li>
+</ul>
+</div>
+<p><strong>Step 8 :</strong></p>
+<p>Check log file in storage/logs/laravel.log</p>
+<img alt="../../../../_images/img38.png" src="../../../../_images/img38.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Jobs dispatched from scheduled commands and cron jobs in Laravel are typically sent directly to the queue system (such as Redis, Beanstalkd, or others) without passing through Horizon.</p>
+<p>Horizon focuses on monitoring queues and jobs managed through Laravel’s queue system, not specifically those dispatched from scheduled commands, therefore they are not shown in the laravel horizon dashboard.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../failedJobs/index.html" class="btn btn-neutral float-left" title="FAILED JOBS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../../php/index.html" class="btn btn-neutral float-right" title="PHP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, pactreon.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

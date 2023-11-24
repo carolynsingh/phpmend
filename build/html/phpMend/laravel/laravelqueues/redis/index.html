@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PREDIS &mdash; php  documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="HORIZON" href="../horizon/index.html" />
+    <link rel="prev" title="JOBS (QUEUES)" href="../jobs/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            php
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html"> PHP Mend</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../general/index.html">General</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Laravel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../core/index.html">Core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jobs/index.html">Jobs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../middleware/index.html">Middleware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../responses/index.html">Responses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../requestclasses/index.html">Request Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../authentication/index.html">Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eloquent/index.html">Eloquent</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Laravel Queues</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../jobs/index.html">JOBS</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">REDIS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../horizon/index.html">HORIZON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../jobClass/index.html">JOB CLASSES AND DAEMONS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../failedJobs/index.html">FAILED JOBS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cronjobs/index.html">CRON JOBS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../php/index.html">Php</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../libraries/index.html">Libraries</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">php</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">PHP Mend</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">LARAVEL</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">LARAVEL QUEUES</a></li>
+      <li class="breadcrumb-item active">PREDIS</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/phpMend/laravel/laravelqueues/redis/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="predis">
+<h1>PREDIS<a class="headerlink" href="#predis" title="Link to this heading"></a></h1>
+<p>Github Link = <a class="reference external" href="https://github.com/predis/predis">https://github.com/predis/predis</a></p>
+<p>A <cite>Redis</cite> client for PHP 7.2 and newer.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Redis</span></code> is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets, and sorted sets.</p>
+<p>To use <code class="docutils literal notranslate"><span class="pre">Redis</span></code> with <code class="docutils literal notranslate"><span class="pre">Laravel</span></code> one needs to install <code class="docutils literal notranslate"><span class="pre">predis</span></code> library, an alternate is also there which is <cite>phpredis</cite></p>
+<section id="prerequisites">
+<h2>PREREQUISITES<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Setup <code class="docutils literal notranslate"><span class="pre">Redis</span></code> on local using docker</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w">  </span>-v<span class="w"> </span>/docker/redis-data:/data<span class="w"> </span>-p<span class="w"> </span><span class="m">6379</span>:6379<span class="w"> </span>--name<span class="w"> </span>redis<span class="w"> </span>-d<span class="w"> </span>redis<span class="w">  </span>redis-server<span class="w"> </span>--appendonly<span class="w"> </span>yes<span class="w">  </span>--requirepass<span class="w"> </span><span class="s2">&quot;qwerty&quot;</span>
+</pre></div>
+</div>
+<p>Here,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="sb">`</span>Host<span class="sb">`</span><span class="w"> </span>:<span class="w"> </span>localhost,
+
+<span class="sb">`</span>Port<span class="sb">`</span><span class="w"> </span>:<span class="w"> </span><span class="m">6379</span>,
+
+<span class="sb">`</span>Password<span class="sb">`</span><span class="w"> </span>:<span class="w"> </span>qwerty
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>For UI one can download <code class="docutils literal notranslate"><span class="pre">RedisInsight</span></code></p></li>
+</ol>
+<p><a class="reference external" href="https://redislabs.com/redis-enterprise/redis-insight/">https://redislabs.com/redis-enterprise/redis-insight/</a></p>
+</section>
+<section id="installation">
+<h2>INSTALLATION<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<p>Install the <code class="docutils literal notranslate"><span class="pre">predis/predis</span></code> package via Composer:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>composer<span class="w"> </span>require<span class="w"> </span>predis/predis
+</pre></div>
+</div>
+</section>
+<section id="workflow-of-integration-of-library">
+<h2>WORKFLOW OF INTEGRATION OF LIBRARY<a class="headerlink" href="#workflow-of-integration-of-library" title="Link to this heading"></a></h2>
+<img alt="../../../../_images/predisWorkflow.png" src="../../../../_images/predisWorkflow.png" />
+</section>
+<section id="hello-world-poc">
+<h2>HELLO WORLD/POC<a class="headerlink" href="#hello-world-poc" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Create a new laravel project</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>composer<span class="w"> </span>create-project<span class="w"> </span>laravel/laravel<span class="w"> </span>predis-demo<span class="w"> </span>--prefer-dist
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Install the <code class="docutils literal notranslate"><span class="pre">predis/predis</span></code> package via Composer:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>composer<span class="w"> </span>require<span class="w"> </span>predis/predis
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Configure redis connection settings in <code class="docutils literal notranslate"><span class="pre">.env</span></code> file</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">REDIS_HOST</span><span class="o">=</span><span class="m">127</span>.0.0.1
+<span class="nv">REDIS_PASSWORD</span><span class="o">=</span>qwerty
+<span class="nv">REDIS_PORT</span><span class="o">=</span><span class="m">6379</span>
+<span class="nv">QUEUE_CONNECTION</span><span class="o">=</span>redis
+<span class="nv">REDIS_CLIENT</span><span class="o">=</span>predis
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Create a UserController class</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>artisan<span class="w"> </span>make:controller<span class="w"> </span>UserController
+</pre></div>
+</div>
+<p>Lets store a key-value pair in the redis database using <code class="docutils literal notranslate"><span class="pre">predis</span></code> library</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
+
+
+<span class="k">class</span> <span class="nc">UserController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">store</span><span class="p">(){</span>
+
+        <span class="c1">// setup redis connection</span>
+        <span class="nv">$redis</span> <span class="o">=</span> <span class="nx">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">make</span><span class="p">(</span><span class="s2">&quot;redis&quot;</span><span class="p">);</span>
+
+        <span class="c1">// sets message to contian &quot;Hello world&quot;</span>
+        <span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
+
+        <span class="c1">// gets the value of message</span>
+        <span class="nv">$value</span> <span class="o">=</span> <span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">);</span>
+
+        <span class="k">print</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Register route in <code class="docutils literal notranslate"><span class="pre">web.php</span></code> file</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Route::get<span class="o">(</span><span class="s1">&#39;/demo&#39;</span>,<span class="o">[</span><span class="se">\A</span>pp<span class="se">\H</span>ttp<span class="se">\C</span>ontrollers<span class="se">\U</span>serController::class,<span class="s1">&#39;store&#39;</span><span class="o">])</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Execute the code</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>artisan<span class="w"> </span>serve
+</pre></div>
+</div>
+<p><a class="reference external" href="http://localhost:8000/demo">http://localhost:8000/demo</a></p>
+<p>Browser Output:</p>
+<img alt="../../../../_images/redisBrOutput.png" src="../../../../_images/redisBrOutput.png" />
+<p>One can check the redis database</p>
+<img alt="../../../../_images/redisInsight1.png" src="../../../../_images/redisInsight1.png" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../jobs/index.html" class="btn btn-neutral float-left" title="JOBS (QUEUES)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../horizon/index.html" class="btn btn-neutral float-right" title="HORIZON" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, pactreon.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

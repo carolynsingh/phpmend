@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JOBS (QUEUES) &mdash; php  documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="PREDIS" href="../redis/index.html" />
+    <link rel="prev" title="LARAVEL QUEUES" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            php
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html"> PHP Mend</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../general/index.html">General</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Laravel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../core/index.html">Core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../jobs/index.html">Jobs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../middleware/index.html">Middleware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../responses/index.html">Responses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../requestclasses/index.html">Request Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../authentication/index.html">Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eloquent/index.html">Eloquent</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Laravel Queues</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">JOBS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../redis/index.html">REDIS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../horizon/index.html">HORIZON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../jobClass/index.html">JOB CLASSES AND DAEMONS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../failedJobs/index.html">FAILED JOBS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cronjobs/index.html">CRON JOBS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../php/index.html">Php</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../libraries/index.html">Libraries</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">php</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">PHP Mend</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">LARAVEL</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">LARAVEL QUEUES</a></li>
+      <li class="breadcrumb-item active">JOBS (QUEUES)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/phpMend/laravel/laravelqueues/jobs/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jobs-queues">
+<h1>JOBS (QUEUES)<a class="headerlink" href="#jobs-queues" title="Link to this heading"></a></h1>
+<p>This documentation shows a simple example to create job with database driver for test email sending.</p>
+<section id="workflow-of-sending-email">
+<h2>WORKFLOW OF SENDING EMAIL<a class="headerlink" href="#workflow-of-sending-email" title="Link to this heading"></a></h2>
+<img alt="../../../../_images/img_35.png" src="../../../../_images/img_35.png" />
+</section>
+<section id="create-laravel-project">
+<h2>CREATE LARAVEL PROJECT<a class="headerlink" href="#create-laravel-project" title="Link to this heading"></a></h2>
+<p><strong>Step 1 : Run the following command to create laravel project</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>composer<span class="w"> </span>create-project<span class="w"> </span>--prefer-dist<span class="w"> </span>laravel/laravel<span class="w"> </span>blog
+</pre></div>
+</div>
+</section>
+<section id="create-mail-setup">
+<h2>CREATE MAIL SETUP<a class="headerlink" href="#create-mail-setup" title="Link to this heading"></a></h2>
+<p><strong>Step 2 :</strong></p>
+<p>We will create email for testing using Laravel Mail facade.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>artisan<span class="w"> </span>make:mail<span class="w"> </span>SendEmailTest
+</pre></div>
+</div>
+<p>Now you will have new folder “Mail” in app directory with SendEmailTest.php file.</p>
+<p>Copy the code and paste on that file.</p>
+<p>app/Mail/SendEmailTest.php</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Mail</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Illuminate\Bus\Queueable</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Contracts\Queue\ShouldQueue</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Mail\Mailable</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Queue\SerializesModels</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">SendEmailTest</span> <span class="k">extends</span> <span class="nx">Mailable</span>
+<span class="p">{</span>
+ <span class="k">use</span> <span class="nx">Queueable</span><span class="p">,</span> <span class="nx">SerializesModels</span><span class="p">;</span>
+
+ <span class="sd">/**</span>
+<span class="sd">  * Create a new message instance.</span>
+<span class="sd">  *</span>
+<span class="sd">  * @return void</span>
+<span class="sd">  */</span>
+ <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span>
+ <span class="p">{</span>
+
+ <span class="p">}</span>
+
+ <span class="sd">/**</span>
+<span class="sd">  * Build the message.</span>
+<span class="sd">  *</span>
+<span class="sd">  * @return $this</span>
+<span class="sd">  */</span>
+ <span class="k">public</span> <span class="k">function</span> <span class="nf">build</span><span class="p">()</span>
+ <span class="p">{</span>
+     <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;emails.test&#39;</span><span class="p">);</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now we require to create email view using blade file. So we will create simple view file and copy below code on following path.</p>
+<p>resources/views/emails/test.blade.php</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="x">&lt;html&gt;</span>
+<span class="x">&lt;head&gt;</span>
+<span class="x"> &lt;title&gt;How to send mail using queue in Laravel 8? - ItSolutionStuff.com&lt;/title&gt;</span>
+<span class="x">&lt;/head&gt;</span>
+<span class="x">&lt;body&gt;</span>
+
+<span class="x">&lt;center&gt;</span>
+<span class="x">&lt;h2 style=&quot;padding: 23px;background: #b3deb8a1;border-bottom: 6px green solid;&quot;&gt;</span>
+<span class="x"> &lt;a href=&quot;https://itsolutionstuff.com&quot;&gt;Visit Our Website : ItSolutionStuff.com&lt;/a&gt;</span>
+<span class="x">&lt;/h2&gt;</span>
+<span class="x">&lt;/center&gt;</span>
+
+<span class="x">&lt;p&gt;Hi, Sir&lt;/p&gt;</span>
+<span class="x">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span>
+<span class="x">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span>
+<span class="x">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span>
+<span class="x">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span>
+<span class="x">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span>
+<span class="x">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</span>
+
+<span class="x">&lt;strong&gt;Thank you Sir. :)&lt;/strong&gt;</span>
+
+<span class="x">&lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<p>After configuration of view file, we have to setup for email send, So set configuration in .env file:</p>
+<p>.env</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">MAIL_DRIVER=smtp</span>
+<span class="x">MAIL_HOST=smtp.gmail.com</span>
+<span class="x">MAIL_PORT=587</span>
+<span class="x">MAIL_USERNAME=xyz@gmail.com</span>
+<span class="x">MAIL_PASSWORD=123456</span>
+<span class="x">MAIL_ENCRYPTION=tls</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Add your email and password to verify.</p>
+</div>
+</section>
+<section id="configuration">
+<h2>CONFIGURATION<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<p><strong>Step 3 : Configuration of Queue</strong></p>
+<p>We will make configuration on queue driver and set queue driver “database”, define database driver on “.env” file:</p>
+<p>.env</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">QUEUE_CONNECTION=database</span>
+</pre></div>
+</div>
+<p>After that we need to generate migration and create tables for queue. Run below commands for queue database tables:</p>
+<p>Generate Migration:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>artisan<span class="w"> </span>queue:table
+</pre></div>
+</div>
+<p>Run Migration:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>artisan<span class="w"> </span>migrate
+</pre></div>
+</div>
+</section>
+<section id="create-and-run-job">
+<h2>CREATE AND RUN JOB<a class="headerlink" href="#create-and-run-job" title="Link to this heading"></a></h2>
+<p><strong>Step 4 : Create Queue Job</strong></p>
+<p>Create queue job by following command :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>artisan<span class="w"> </span>make:job<span class="w"> </span>SendEmailJob
+</pre></div>
+</div>
+<p>Now you have SendEmailJob.php file in “Jobs” directory. Put below code on that file.</p>
+<p>app/Jobs/SendEmailJob.php</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Jobs</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Illuminate\Bus\Queueable</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Contracts\Queue\ShouldQueue</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Foundation\Bus\Dispatchable</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Queue\InteractsWithQueue</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Queue\SerializesModels</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">App\Mail\SendEmailTest</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Mail</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Mail</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">SendEmailJob</span> <span class="k">implements</span> <span class="nx">ShouldQueue</span>
+<span class="p">{</span>
+ <span class="k">use</span> <span class="nx">Dispatchable</span><span class="p">,</span> <span class="nx">InteractsWithQueue</span><span class="p">,</span> <span class="nx">Queueable</span><span class="p">,</span> <span class="nx">SerializesModels</span><span class="p">;</span>
+
+ <span class="k">protected</span> <span class="nv">$details</span><span class="p">;</span>
+
+ <span class="sd">/**</span>
+<span class="sd">  * Create a new job instance.</span>
+<span class="sd">  *</span>
+<span class="sd">  * @return void</span>
+<span class="sd">  */</span>
+ <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$details</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">details</span> <span class="o">=</span> <span class="nv">$details</span><span class="p">;</span>
+ <span class="p">}</span>
+
+ <span class="sd">/**</span>
+<span class="sd">  * Execute the job.</span>
+<span class="sd">  *</span>
+<span class="sd">  * @return void</span>
+<span class="sd">  */</span>
+ <span class="k">public</span> <span class="k">function</span> <span class="nf">handle</span><span class="p">()</span>
+ <span class="p">{</span>
+     <span class="nv">$email</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SendEmailTest</span><span class="p">();</span>
+     <span class="nx">Mail</span><span class="o">::</span><span class="na">to</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">details</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="nv">$email</span><span class="p">);</span>
+ <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Step 5 : Test Queue Job</strong></p>
+<p>Create route with following code for testing created queue.</p>
+<p>routes/web.php</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">Route::get(&#39;email-test&#39;, function(){</span>
+
+<span class="x"> $details[&#39;email&#39;] = &#39;your_email@gmail.com&#39;;</span>
+
+<span class="x"> dispatch(new App\Jobs\SendEmailJob($details));</span>
+
+<span class="x"> dd(&#39;done&#39;);</span>
+<span class="x">});</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In “$details[‘email’]” provide an email id on which mail will be sent to verify.</p>
+</div>
+<p>Route is defined, check queue process using laravel queue command :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>artisan<span class="w"> </span>queue:listen
+</pre></div>
+</div>
+<p>You will see layout like below if queue works :</p>
+<img alt="../../../../_images/img40.png" src="../../../../_images/img40.png" />
+<p>Run project using below command :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>artisan<span class="w"> </span>serve
+</pre></div>
+</div>
+<p>Now run your project on below link :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://localhost:8000/email-test
+</pre></div>
+</div>
+<img alt="../../../../_images/img_114.png" src="../../../../_images/img_114.png" />
+<p>A successful job will result in the mail being sent</p>
+<img alt="../../../../_images/img_25.png" src="../../../../_images/img_25.png" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="LARAVEL QUEUES" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../redis/index.html" class="btn btn-neutral float-right" title="PREDIS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, pactreon.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
