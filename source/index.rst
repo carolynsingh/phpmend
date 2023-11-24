@@ -11,10 +11,4 @@ Welcome to php's documentation!
    :caption: Contents:
 
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+    PHP Mend <./phpMend/index.rst>
