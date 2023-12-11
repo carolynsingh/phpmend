@@ -59,7 +59,7 @@ For bootstrap, give the path of autoload.php file.
 
 **Step 5 :**
 
-Inside "src" directory create a class "Calculator.php".
+Inside "src" directory create a PHP class "Calculator.php".
 
 .. image:: images/img_5.png
 
