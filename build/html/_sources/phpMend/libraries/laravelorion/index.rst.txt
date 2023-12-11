@@ -158,3 +158,10 @@ And define protected $model property :
 Hit of the GET route
 
 .. image:: images/img_2.png
+
+|
+
+WORKING OF LARAVEL ORION
+-------------------------------
+
+.. image:: images/img_4.png
