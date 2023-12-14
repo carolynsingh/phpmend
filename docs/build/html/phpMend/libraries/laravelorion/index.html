@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LARAVEL ORION &mdash; php  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="TESTING" href="../../testing/index.html" />
+    <link rel="prev" title="LARAVEL PASSPORT" href="../laravelpassport/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            php
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html"> PHP Mend</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../general/index.html">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laravel/index.html">Laravel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../php/index.html">Php</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Libraries</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../laravelpassport/index.html">Laravel Passport</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Laravel Orion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">INTRODUCTION</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#features">FEATURES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#operations-provided-by-orion-rest-apis">OPERATIONS PROVIDED BY ORION REST APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#requirements">REQUIREMENTS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-laravel-project">CREATE LARAVEL PROJECT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation">INSTALLATION</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simple-crud">SIMPLE CRUD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#working-of-laravel-orion">WORKING OF LARAVEL ORION</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../testing/index.html">Testing</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">php</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">PHP Mend</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">LIBRARIES</a></li>
+      <li class="breadcrumb-item active">LARAVEL ORION</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/phpMend/libraries/laravelorion/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="laravel-orion">
+<h1>LARAVEL ORION<a class="headerlink" href="#laravel-orion" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>INTRODUCTION<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>Laravel Orion allows you to build a fully featured REST API based on your Eloquent models and relationships with simplicity of Laravel as you love it.</p>
+</section>
+<section id="features">
+<h2>FEATURES<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>REST API for models and relationships with batch operations support</p></li>
+<li><p>Advanced searching capabilities with sorting, filtering, and keyword search</p></li>
+<li><p>Automatic OpenAPI specifications generation</p></li>
+<li><p>Comprehensive set of endpoint hooks</p></li>
+<li><p>Relations inclusion and soft deletes via query parameters</p></li>
+<li><p>Straightforward authorization and validation</p></li>
+<li><p>Responses transformation via API resources</p></li>
+</ul>
+</section>
+<section id="operations-provided-by-orion-rest-apis">
+<h2>OPERATIONS PROVIDED BY ORION REST APIs<a class="headerlink" href="#operations-provided-by-orion-rest-apis" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>index</p></li>
+<li><p>search</p></li>
+<li><p>show</p></li>
+<li><p>store</p></li>
+<li><p>update</p></li>
+<li><p>destroy</p></li>
+<li><p>restore</p></li>
+<li><p>batchStore</p></li>
+<li><p>batchUpdate</p></li>
+<li><p>batchDestroy</p></li>
+<li><p>batchRestore</p></li>
+</ul>
+</section>
+<section id="requirements">
+<h2>REQUIREMENTS<a class="headerlink" href="#requirements" title="Link to this heading"></a></h2>
+<p>PHP &gt;= 7.3
+Laravel &gt;= 5.7</p>
+</section>
+<section id="create-laravel-project">
+<h2>CREATE LARAVEL PROJECT<a class="headerlink" href="#create-laravel-project" title="Link to this heading"></a></h2>
+<p>Create a new project using composer :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>composer<span class="w"> </span>create-project<span class="w"> </span>--prefer-dist<span class="w"> </span>laravel/laravel<span class="w"> </span>your_project_name
+</pre></div>
+</div>
+</section>
+<section id="installation">
+<h2>INSTALLATION<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<p>Laravel Orion can be installed into a new or existing project, simply by adding a composer dependency :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>composer<span class="w"> </span>require<span class="w"> </span>tailflow/laravel-orion
+
+php<span class="w"> </span>artisan<span class="w"> </span>vendor:publish<span class="w"> </span>--tag<span class="o">=</span>orion-config
+</pre></div>
+</div>
+</section>
+<section id="simple-crud">
+<h2>SIMPLE CRUD<a class="headerlink" href="#simple-crud" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Create a Model with it’s controller, migration, factory and seeder :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>artisan<span class="w"> </span>make:model<span class="w"> </span>Post<span class="w"> </span>-a
+</pre></div>
+</div>
+<img alt="../../../_images/img_36.png" src="../../../_images/img_36.png" />
+<ol class="arabic simple" start="2">
+<li><p>Populate the database Post table</p></li>
+</ol>
+<p>Add two columns in the CreatePostsTable migration :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$table-&gt;string(&#39;name&#39;);</span>
+<span class="x">$table-&gt;text(&#39;description&#39;);</span>
+</pre></div>
+</div>
+<img alt="../../../_images/img44.png" src="../../../_images/img44.png" />
+<p>Add some fake data in the database posts table using factories</p>
+<p>In the database/factories/PostFactory.php add the following code in the return array :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">return</span><span class="w"> </span><span class="o">[</span>
+<span class="w">       </span><span class="s1">&#39;name&#39;</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="nv">$this</span>-&gt;faker-&gt;name,
+<span class="w">       </span><span class="s1">&#39;description&#39;</span><span class="o">=</span>&gt;<span class="w"> </span><span class="nv">$this</span>-&gt;faker-&gt;text
+<span class="w">    </span><span class="o">]</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Now call the PostFactory from the Database Seeder :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="se">\A</span>pp<span class="se">\M</span>odels<span class="se">\P</span>ost::factory<span class="o">(</span><span class="m">10</span><span class="o">)</span>-&gt;create<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Run the following command to run the migrations and Seeders :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>artisan<span class="w"> </span>migrate<span class="w"> </span>--seed
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the table already exists, drop the tables and rerun the migrations by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>artisan<span class="w"> </span>migrate:fresh<span class="w"> </span>--seed
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Make the app/Http/Controllers/PostController.php extend OrionHttpControllersController</p></li>
+</ol>
+<p>And define protected $model property :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
+
+
+<span class="k">use</span> <span class="nx">Orion\Http\Controllers\Controller</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Orion\Concerns\DisableAuthorization</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">App\Models\Post</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">PostController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+
+<span class="p">{</span>
+ <span class="k">use</span> <span class="nx">DisableAuthorization</span><span class="p">;</span>
+ <span class="sd">/**</span>
+<span class="sd">  * Fully-qualified model class name</span>
+<span class="sd">  */</span>
+ <span class="k">protected</span> <span class="nv">$model</span> <span class="o">=</span> <span class="nx">Post</span><span class="o">::</span><span class="na">class</span><span class="p">;</span> <span class="c1">// or &quot;App\Models\Post&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Register the route in api.php by calling Orion::resource</p></li>
+</ol>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">App\Http\Controllers\PostController</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Route</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Orion\Facades\Orion</span><span class="p">;</span>
+
+
+<span class="nx">Route</span><span class="o">::</span><span class="na">group</span><span class="p">([</span><span class="s1">&#39;as&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;api.&#39;</span><span class="p">],</span> <span class="k">function</span><span class="p">()</span> <span class="p">{</span>
+ <span class="nx">Orion</span><span class="o">::</span><span class="na">resource</span><span class="p">(</span><span class="s1">&#39;posts&#39;</span><span class="p">,</span> <span class="nx">PostController</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>In the terminal run the following command to list all the routes</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>php<span class="w"> </span>artisan<span class="w"> </span>route:list
+</pre></div>
+</div>
+<img alt="../../../_images/img_115.png" src="../../../_images/img_115.png" />
+<p>Hit of the GET route</p>
+<img alt="../../../_images/img_27.png" src="../../../_images/img_27.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="working-of-laravel-orion">
+<h2>WORKING OF LARAVEL ORION<a class="headerlink" href="#working-of-laravel-orion" title="Link to this heading"></a></h2>
+<img alt="../../../_images/img_43.png" src="../../../_images/img_43.png" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../laravelpassport/index.html" class="btn btn-neutral float-left" title="LARAVEL PASSPORT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../testing/index.html" class="btn btn-neutral float-right" title="TESTING" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, pactreon.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
